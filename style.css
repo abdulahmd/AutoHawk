@@ -1,0 +1,202 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.abd {
+  border-radius: 200px;
+}
+
+.name {
+  color: black;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.max-w-4xl {
+  max-width: 100%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.shadow-lg {
+  box-shadow: 1 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-gray-800 {
+  color: #2d3748;
+}
+
+.text-blue-600 {
+  color: #3182ce;
+}
+
+.bg-blue-600 {
+  background: url(Abdullah-Ahmed.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, #000000, #a0a0a0);
+  border-radius: 20px;
+}
+
+.text-white {
+  color: white;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.nav-btn {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: #e2e8f0;
+}
+
+.nav-btn.active {
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.btn-primary {
+  background-color: #3182ce;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2c5282;
+}
+
+.btn-success {
+  background-color: #48bb78;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #38a169;
+}
+
+.blog-item, .research-item {
+  background-color: #f7fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bg-gray-100 {
+  background-color: #f7fafc;
+}
+
+.text-gray-600 {
+  color: #718096;
+}
+
+.btn-primary {
+  background-color: #1d4ed8;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+iframe {
+  border: none;
+  width: 700px;
+  height: 700px;
+}
+

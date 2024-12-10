@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aerospace Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .dropdown-content {
+      display: none;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+    }
+
+    .blog-item {
+      padding: 15px;
+      background-color: #f3f4f6;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: #1D4ED8; /* Blue background */
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      background-color: #2563EB; /* Darker blue on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
+      <!-- Navbar -->
+      <nav class="flex justify-between items-center bg-gradient-to-r from-blue-600 to-blue-500 p-4 text-white">
+        <div class="logo font-bold text-2xl">AutoHawk</div>
+        <div class="nav-links">
+          <button class="nav-btn" id="home-tab">Home</button>
+          <button class="nav-btn" id="blogs-tab">Blogs</button>
+          <button class="nav-btn" id="research-tab">Research</button>
+          <button class="nav-btn" id="resume-tab">Resume</button>
+          <button class="nav-btn" id="about-me-tab">About Me</button>
+          <button class="nav-btn" id="about-ism-tab">About ISM</button>
+          <button class="nav-btn" id="mentor-tab">Mentor</button>
+          <button class="nav-btn" id="projects-tab">Projects</button>
+        </div>
+      </nav>
+
+      <!-- Content -->
+      <div class="content p-6" id="content">
+        <!-- Content will be dynamically injected here based on tab selection -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const contentDiv = document.getElementById('content');
+    const homeTab = document.getElementById('home-tab');
+    const blogsTab = document.getElementById('blogs-tab');
+    const researchTab = document.getElementById('research-tab');
+    const resumeTab = document.getElementById('resume-tab');
+    const aboutMeTab = document.getElementById('about-me-tab');
+    const aboutISMTab = document.getElementById('about-ism-tab');
+    const mentorTab = document.getElementById('mentor-tab');
+    const projectsTab = document.getElementById('projects-tab');
+
+    function setActiveTab(activeTab) {
+      // Reset all tabs
+      const allTabs = document.querySelectorAll('.nav-btn');
+      allTabs.forEach(tab => tab.classList.remove('active'));
+
+      // Set the active tab
+      activeTab.classList.add('active');
+      renderContent(activeTab.id);
+    }
+
+    function renderContent(tabId) {
+      switch (tabId) {
+        case 'home-tab':
+          contentDiv.innerHTML = `
+            <div class="intro-section text-center">
+              <h2 class="text-4xl font-bold mb-4">Welcome to My Aerospace Portfolio</h2>
+              <img src="drone.png" alt="Cover Photo" class="abd">
+              <p class="mt-4 text-xl">"Dedicated to innovation in aerospace and drone engineering."</p>
+              <h3 class="text-2xl font-semibold mt-6">Abdullah Ahmed</h3>
+              <p class="text-lg">ISM 1 Student | Drone Engineering</p>
+            </div>
+          `;
+          break;
+        case 'blogs-tab':
+          contentDiv.innerHTML = `
+            <div class="text-center">
+              <h2 class="text-3xl font-semibold mb-6">My Blogs</h2>
+              <div class="space-y-6">
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Soaring Like a Hawk | 11/22/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>After completing an interview with another individual from Lockheed Martin-Aero that specialized in vehicle aerodynamics and rotary crafts, I realized just how important it was to receive feedback from different types of aerial engineers, not just ones that solely work with specific subcategories like control or system design. From this interview I gained insight on the effectiveness of attaching an aluminum encasing on a drone. His main point was that autonomous functionalities would be difficult with any sort of metal taking up a major portion of my drone. Despite the fact that he wasn’t experienced with the type of drone I was using, (A 4-axis drone (4 motors in a cross)) I researched his claim online and realized that since Pixhawks autotune at flight start, having such a heavy concentration of metal can actually mess up the compass calibration by a noticeable amount to the point that the orientation (yaw in technical terms) can mess up completely. Besides the interview, I’ve been working on a research assessment with a research paper that fits very well with my original work. The paper focuses on agricultural data gathering operations that were completed with an autonomous drone. All in all, these past few weeks have been filled with me learning more about my topic and recognizing potential issues before I begin to apply them.
+</p>
+                  </div>
+                </div>
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Connecting what I've learned | 11/10/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>This week, I spent time keeping in touch per the request of a  previous professional I interviewed. My interviewer works for Unscrewed Aerospace, a company that specializes in autonomous drone solutions for other companies. During the interview I got to work building my drone prototype and tuning it to finally get it up and running in the air. This week exemplified the research I’ve done thus far in the year through ISM, as I was able to culminate my knowledge into a product. Having no experience with drones, I was forced to apply what I learned thus far from work and extracurricular experiences, namely robotics. While I came across issues such as motors entirely not working properly, the ability to troubleshoot engineering issues is something that remains constant between both robotics and drone engineering so that is exactly what I did. From there, I went to the local neighborhood park and got to testing. I was finally able to master an automated landing sequence that ensured my drone would not crash once it finished its duties. From being able to interview someone that specializes in the field of my project to creating something that I lacked the skills to formulate, I learned one thing: being able to connect my current skills to whatever project I’m working on in order to get a successful end product. In my case, I used the ISM interviewing experience I gained thus far in the year along with my previously mentioned robotics experience.
+</p>
+                  </div>
+                </div>
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Finding common ground ... in the sky | 10/28/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>Last week, I was able to partake in my first professional ISM interview over aeronautical engineering. My interviewer works at Lockheed Martin (The US Military-Industrial Company) where he focuses on missile defense systems as a Project Manager and Software Engineer. We were able to discuss how Lockheed Martin has contributed to the aeronautical & aerospace defense industry and the implications that has in my project. He also brought up specific departments (Such as Lockheed Martin Aero in Fort Worth) that focus on rotary drone development which would align with my work. From this interview, I was able to learn that despite differences in two people’s fields, you can still learn a lot from the similarities between both fields and gain valuable connections that are closer to your specialization. In addition to interviewing, I completed an introduction assignment to my original work where I detailed my plan for this upcoming 9 weeks. Right now, my plan is to create a drone that can run autonomously in response to environmental disturbances along with using AI camera operations to detect obscurities in the environment. I’m currently waiting for my control for the drone to arrive to get an early start on my code. In addition to this, I hope to complete a series of interviews to find a mentor that can assist me in figuring out optimal control mechanisms based on my research thus far.</p>
+                  </div>
+                </div>
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Learning Beyond the Skies | 10/14/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>This week, I participated in the ISM symposium. Coming into it, I was expecting to make connections with various engineers within the aerospace industry or artificial intelligence field. However, I only met one engineer in total yet still feel a sense of accomplishment from this experience. During my interviews, both the professionals I spoke with worked in administrative education, though our conversations found the crossroads of education and teamwork in engineering. With my first interview, I related my experience in robotics leadership to my interviewer's work as an Administrative Principal. This helped progress our discussion as I was able to ask questions about effective ways to handle team management. While this didn’t necessarily relate to my work in ISM, I was still able to make a valuable connection with someone outside of my field while building good professional communication skills. Past the professionalism aspect and the ISM symposium, I spent my week researching more about autonomous drone control and finalizing a list of hardware that I can further discuss with a mentor about. I hope that the skills I developed from the ISM symposium will bring ease in finding a mentor given how much it has elevated my soft skills. </p>
+                  </div>
+                </div>
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Ready, Set, Fly | 10/06/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>This week, I’ve been able to dive into control strategies I was introduced to from my research assessment. Besides modeling, my main goal is to develop a control system that can either fully respond to environmental disturbances (such as wind) or create a multi controller system where each system is responsible for responding to a specific set of environmental disturbances. With my topic proposal, I was able to detail how my experience with PID control and OpenCv computer vision can be applied to my research this year, and how I wanted to expand on these learned topics. Besides the progress I’ve made in my research, I still have questions to pose to potential mentors. This includes what hardware (such as brushless motor types) I’ll specifically need and whether communication modules will be necessary for my project. This week, I was also able to create a list of possible hardware to purchase along with researching matlab controller designs, which will be the primary focus of my work. Next week, as the professional symposium approaches, I hope to speak with professionals in the engineering field who can provide some guidance for future work. All in all, my research so far has pushed me forward and has given me a good amount of questions to keep in mind for later on.
+</p>
+                  </div>
+                </div>
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Into the Deep | 9/23/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>Spending almost my entire weekend at robotics, I’ve been able to immerse myself with control systems. While there, I was able to speak with a few graduate mentors that introduced me to nonlinear control with I-PD. Essentially, it works by incorporating an external system rather than working in a closed system. In addition to this, beginning the research assessment has allowed me to gain even more insight into such control systems. Apart from this, I also need to start looking at what detection methods I’ll need to integrate for the machine learning module in my camera setup. For now, I’m going to continue drafting a basic design in AutoCAD to potentially show a mentor, while researching different system setups within MatLab (a popular software used to design systems) to get an idea of how I’ll go from here. Furthermore, my viewpoint has changed from previous blog posts. I've come to figure out that previous systems that I thought about were not used much in professional engineering, (Such as PIDF) which is a relief given the astounding amount of math calculations I would have to perform to get the system up and running. All in all, I hope to continue researching nonlinear control in the current research assessment to gain some expertise with diverse systems.
+</p>
+                  </div>
+                </div>
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Flying Through the Start | 9/16/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>This week, I’ve been able to narrow my topic down to a subject that I am familiar with: control theory. This encompasses the computational aspects of engineering and machine learning to make a system that relies on itself. My idea was based on the error brought by self driving cars. I want to work on a smaller scale to see how I can ultimately minimize error to make strides in autonomous vehicles. Thus, I landed on drone usage, which can be used in rescue operations where, because of distance, human control can’t be applied. Throughout this week, I’d like to get my modeling for a prototype completed and research what materials might work best in certain settings. However, I don’t want to get too ahead of myself which is why finalizing the model will come after meeting a mentor and running them down everything. In the meantime, I will study optimal control systems and ways to keep error to a minimum. Having experience with control systems already, I’ll most likely stick with the system I have the most experience with: PIDF, though this may change based on advice from mentors. My work in ISM has allowed me to deeply explore my interests in data and computation, leading me to a subject I am both passionate about and experienced in.</p>
+                  </div>
+                </div>
+                <div class="blog-item">
+                  <h3 class="font-semibold text-xl">Facing new beginnings | 9/9/2024</h3>
+                  <a href="#" class="read-more-btn" onclick="toggleContent(event, this)">Read More</a>
+                  <div class="dropdown-content">
+                    <p>I am currently planning to focus on data science, either with its implications in math, space, or health. My experience in robotics along with other tech-based competitions will allow me to hit the ground running despite my unfamiliarity with the subtopics I’m looking through for data science. Apart from the artificial intelligence aspect of data science, I’m hoping to focus on deep learning while also looking through optimal datasets and processing methods to fit my needs. In ISM so far, I’ve been able to push myself to speak in front of a larger audience, which will allow me to not hold back when reaching out to potential mentors or when I’m presenting my final product. Throughout this week, I want to research the different applications of the sub-topics within my field to make a final decision on where to continue my research and with whom. By doing so, I’ll find a real-world application for my work which will help me narrow down my final topic. So far, I’ve been able to narrow down my broader topic of computer science/robotics to data science, though I’d like to find a more specific subject to pursue that will hopefully captivate future ISM researchers in the long run. All in all, I hope to dive deeper into my chosen field and look out for whatever has the best application from a research perspective.
+</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          break;
+        case 'research-tab':
+          contentDiv.innerHTML = `
+            <div class="text-center">
+              <h2 class="text-3xl font-semibold mb-6">Research</h2>
+              <div class="space-y-6">
+                <div class="research-item">
+                  <h3 class="font-semibold text-xl">Research Assessment 3 | 10/31/2024</h3>
+                  <p class="text-gray-600">Sliding Control Implemented on a Quadrotor Drone</p>
+                  <button class="btn-primary" onclick="toggleContent(event, this)">View Assessment</button>
+                  <div class="dropdown-content">
+                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vR1RS8RWHW0LwZK-N_73zi_guqibW2wn_1-kmia4ZWs4LDQqoCrhixNAa-DyzTUnXSIpyC9zrR1oUvC/pub?embedded=true"></iframe>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold text-xl">Research Assessment 2 | 10/16/2024</h3>
+                  <p class="text-gray-600">AI Intelligent Control Implemented on Drones</p>
+                  <button class="btn-primary" onclick="toggleContent(event, this)">View Assessment</button>
+                  <div class="dropdown-content">
+                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vSv5WHauWVUhtyNiuGyn9f8txfkhlB5DtErIdbF6DDCfyQFLR2TvnsRmqz1CNlfUBb5Mnjh95kDsekA/pub?embedded=true"></iframe>
+                  </div>
+                </div>
+                <div class="research-item">
+                  <h3 class="font-semibold text-xl">Research Assessment 1 | 9/09/2024</h3>
+                  <p class="text-gray-600">Control Engineering on a Hexacopter Drone</p>
+                  <button class="btn-primary" onclick="toggleContent(event, this)">View Assessment</button>
+                  <div class="dropdown-content">
+                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vRXH_AL0Ft4ir7cqB1eECFJA2ATld_W-Msj00WWW7nTuifvbyiI0x6vCQmJzo3WkJgYhZToi29Ylfkw/pub?embedded=true"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          break;
+        case 'resume-tab':
+          contentDiv.innerHTML = `
+            <div class="text-center">
+              <h2 class="text-3xl font-semibold mb-6">Professional Resume</h2>
+              <div class="bg-gray-100 p-6 rounded-lg shadow-md mx-auto">
+                <h3 class="text-2xl font-semibold mb-4">Abdullah Ahmed</h3>
+                <div class="mb-4">
+                  <h4 class="font-semibold">Education</h4>
+                  <p>Aerospace Engineering, ISM 1 Program</p>
+                </div>
+                <div class="mb-4">
+                  <h4 class="font-semibold">Skills</h4>
+                    <p>Drone Technology</p>
+                    <p>Aerospace Research</p>
+                    <p>Technical Writing</p>
+                </div>
+                <button class="btn-success">Download Resume</button>
+              </div>
+            </div>
+          `;
+          break;
+        default:
+          contentDiv.innerHTML = '';
+          break;
+      }
+    }
+
+    // Toggle function for dropdown content
+    function toggleContent(event, link) {
+      event.preventDefault();  // Prevents the page from scrolling to the top
+      const dropdownContent = link.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    }
+
+
+    // Set event listeners for tab buttons
+    homeTab.addEventListener('click', () => setActiveTab(homeTab));
+    blogsTab.addEventListener('click', () => setActiveTab(blogsTab));
+    researchTab.addEventListener('click', () => setActiveTab(researchTab));
+    resumeTab.addEventListener('click', () => setActiveTab(resumeTab));
+    aboutMeTab.addEventListener('click', () => setActiveTab(aboutMeTab));
+    aboutISMTab.addEventListener('click', () => setActiveTab(aboutISMTab));
+    mentorTab.addEventListener('click', () => setActiveTab(mentorTab));
+    projectsTab.addEventListener('click', () => setActiveTab(projectsTab));
+
+    // Initialize with the home tab active
+    setActiveTab(homeTab);
+  </script>
+</body>
+
+</html>

@@ -200,3 +200,53 @@ iframe {
   height: 700px;
 }
 
+/* Photo styling */
+.photo-section img {
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+/* Text Styling */
+.text-center {
+  text-align: center;
+}
+
+.text-3xl {
+  font-size: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-gray-700 {
+  color: #4a4a4a;
+}
+
+.text-gray-600 {
+  color: #6b6b6b;
+}
+
+.text-blue-600 {
+  color: #1d4ed8;
+}
+
+/* Link styling */
+a {
+  text-decoration: none;
+}
+
+/* LinkedIn Logo Styling */
+.linkedin-section img {
+  transition: transform 0.3s ease;
+}
+
+.linkedin-section img:hover {
+  transform: scale(1.1);
+}
+
+

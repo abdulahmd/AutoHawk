@@ -249,4 +249,79 @@ a {
   transform: scale(1.1);
 }
 
+#about-ism {
+  padding: 20px;
+  background-color: #f9f9f9; /* Matches light background areas */
+}
+
+.section-title {
+  font-size: 28px;
+  color: #1a1a1a; /* Darker for emphasis */
+  margin-bottom: 15px;
+}
+
+.content-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.skills-list {
+  list-style-type: disc;
+  margin: 10px 0 20px 40px;
+  color: #555;
+}
+
+/* Flex container for buttons and dropdowns */
+.button-dropdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Dropdown wrapper */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  z-index: 1;
+  min-width: 150px;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #2d3748;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.dropdown-content a:hover {
+  color: #1d4ed8;
+}
+
+/* Show dropdown on toggle */
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
 

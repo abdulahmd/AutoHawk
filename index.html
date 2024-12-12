@@ -307,11 +307,85 @@
                 </a>
               </div>
             </div>
-
           `;
           break;
-        default:
-          contentDiv.innerHTML = '';
+        case 'about-ism-tab':
+            contentDiv.innerHTML = `
+              <div id="about-ism" class="tab-content">
+                <h2 class="text-3xl font-semibold mb-4">About the ISM Program</h2>
+                <p class="text-lg text-gray-700">
+                  Frisco ISD’s Independent Study and Mentorship program is a program for which students must apply, interview, and be recommended during their junior and/or senior year. Gifted and high achieving students focus their study on a topic or career of their choice. They develop a research portfolio that has a collection of resources including interviews and observations with people who work in their chosen field or topic of study.
+                </p>
+                <p class="text-lg text-gray-700">
+                  Students work on time management, communication, research, goal setting, various soft skills, and presentation skills. During the spring semester, students work with mentors at their mentor’s place of business to gain "real world" experience and also to create an advanced product related to their topic. Students give progressively longer speech presentations and will give a formal presentation of their product and mentorship in May. Students leave the ISM experience knowing more about their chosen profession and whether or not that profession is the life and career path they desire to choose as they prepare to enter college.
+                </p>
+              </div>
+            `;
+            break;
+        case 'mentor-tab':
+          contentDiv.innerHTML = `
+              <div id="mentor" class="tab-content">
+                <p class="text-lg text-gray-700">Coming soon...</p>
+              </div>
+          `;
+           break;
+        case 'projects-tab':
+              contentDiv.innerHTML = `
+                <div class="text-center">
+                  <h2 class="text-3xl font-semibold mb-6">Projects</h2>
+                  <div class="space-y-6">
+
+                    <div class="research-item">
+                      <h3 class="font-semibold text-xl">AutoHawk</h3>
+                      <img src="drone.png" alt="Cover Photo" class="abd">
+                      <p class="text-gray-600">AI Powered Drone that gathers climate data</p>
+                      <!-- Button and Dropdown Container -->
+                      <div class="button-dropdown-container">
+                        <!-- Original Work -->
+                        <div class="dropdown-wrapper">
+                          <button class="btn-primary" onclick="toggleContent(event, this)">View Original Work</button>
+                          <div class="dropdown-content hidden">
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Proposal</a>
+                          </div>
+                        </div>
+                        <!-- Final Product -->
+                        <div class="dropdown-wrapper">
+                          <button class="btn-primary" onclick="toggleContent(event, this)">View Final Product</button>
+                          <div class="dropdown-content hidden">
+                            <a href="#">Final Proposal</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              `;
+  break;
+
+          contentDiv.innerHTML = `
+              <div class="text-center">
+              <h2 class="text-3xl font-semibold mb-6">Projects</h2>
+              <div class="space-y-6">
+
+                <div class="research-item">
+                  <h3 class="font-semibold text-xl">AutoHawk</h3>
+                  <img src="drone.png" alt="Cover Photo" class="abd">
+                  <p class="text-gray-600">AI Powered Drone that gathers climate data</p>
+                  <button class="btn-primary" onclick="toggleContent(event, this)">View Original Work</button>
+                  <div class="dropdown-content">
+                    <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing"></a>
+                  </div>
+                  <button class="btn-primary" onclick="toggleContent(event, this)">View Final Product</button>
+                  <div class="dropdown-content">
+                    <a href=""></a>
+                  </div>
+                </div>
+                
+                
+              </div>
+            </div>
+          `;
           break;
       }
     }

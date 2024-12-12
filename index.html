@@ -261,8 +261,9 @@
                 
                 <!-- Button Container -->
                 <div class="mt-4">
+                  <p></p>
                   <a href="resume.pdf" download>
-                    <button class="btn-success w-full sm:w-auto">Download Resume</button>
+                    <button class="btn-primary"><strong>Download Resume</strong></button>
                   </a>
                 </div>
               </div>
@@ -275,7 +276,7 @@
             <div id="about-tab" class="tab-content">
               <!-- Professional Photo -->
               <div class="photo-section text-center">
-                <img src="https://media.licdn.com/dms/image/v2/D5603AQGVPt8ZkKLC8A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732245135330?e=1739404800&v=beta&t=N3Xat_mbDmB842LsLFxkizgTPn1_lBl6KFyg7OtUCpU" alt="Abdullah Ahmed" class="rounded-full w-32 h-32 mx-auto mb-4">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQGVPt8ZkKLC8A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732245135330?e=1739404800&v=beta&t=N3Xat_mbDmB842LsLFxkizgTPn1_lBl6KFyg7OtUCpU" alt="Abdullah Ahmed" class="abd">
               </div>
               
               <!-- Brief Bio -->
@@ -343,14 +344,15 @@
                       <div class="button-dropdown-container">
                         <!-- Original Work -->
                         <div class="dropdown-wrapper">
-                          <button class="btn-primary" onclick="toggleContent(event, this)">View Original Work</button>
+                          <button class="btn-primary" onclick="toggleContent(event, this)"><strong>View Original Work</strong></button>
                           <div class="dropdown-content hidden">
                             <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Proposal</a>
                           </div>
                         </div>
+                        <p></p>
                         <!-- Final Product -->
                         <div class="dropdown-wrapper">
-                          <button class="btn-primary" onclick="toggleContent(event, this)">View Final Product</button>
+                          <button class="btn-primary" onclick="toggleContent(event, this)"><strong>View Final Product</strong></button>
                           <div class="dropdown-content hidden">
                             <a href="#">Final Proposal</a>
                           </div>
@@ -361,31 +363,6 @@
                   </div>
                 </div>
               `;
-  break;
-
-          contentDiv.innerHTML = `
-              <div class="text-center">
-              <h2 class="text-3xl font-semibold mb-6">Projects</h2>
-              <div class="space-y-6">
-
-                <div class="research-item">
-                  <h3 class="font-semibold text-xl">AutoHawk</h3>
-                  <img src="drone.png" alt="Cover Photo" class="abd">
-                  <p class="text-gray-600">AI Powered Drone that gathers climate data</p>
-                  <button class="btn-primary" onclick="toggleContent(event, this)">View Original Work</button>
-                  <div class="dropdown-content">
-                    <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing"></a>
-                  </div>
-                  <button class="btn-primary" onclick="toggleContent(event, this)">View Final Product</button>
-                  <div class="dropdown-content">
-                    <a href=""></a>
-                  </div>
-                </div>
-                
-                
-              </div>
-            </div>
-          `;
           break;
       }
     }

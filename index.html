@@ -44,7 +44,6 @@
 <body>
   <div class="container">
     <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
-      <!-- Navbar -->
       <nav class="flex justify-between items-center bg-gradient-to-r from-blue-600 to-blue-500 p-4 text-white">
         <div class="logo font-bold text-2xl">Abdullah Ahmed</div>
         <div class="nav-links">
@@ -57,11 +56,9 @@
           <button class="nav-btn" id="mentor-tab">Mentor</button>
           <button class="nav-btn" id="projects-tab">Projects</button>
         </div>
-      </nav>
-
-      <!-- Content -->
+        <button id="darkModeToggle" class="dark-mode-toggle">🌙 Toggle Dark Mode</button>
+      </nav>      
       <div class="content p-6" id="content">
-        <!-- Content will be dynamically injected here based on tab selection -->
       </div>
     </div>
   </div>
@@ -91,7 +88,7 @@
       switch (tabId) {
         case 'home-tab':
           contentDiv.innerHTML = `
-            <div class="intro-section text-center">
+            <div class="intro-section text-center home-tab-background">
               <h2 class="text-4xl font-bold mb-4">Welcome to My Aerospace Portfolio</h2>
               <img src="drone.png" alt="Cover Photo" class="abd">
               <p class="mt-4 text-xl">"Dedicated to innovation in aerospace and drone engineering."</p>
@@ -346,7 +343,10 @@
                         <div class="dropdown-wrapper">
                           <button class="btn-primary" onclick="toggleContent(event, this)"><strong>View Original Work</strong></button>
                           <div class="dropdown-content hidden">
-                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Proposal</a>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Proposal</a><p></p>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Original Work</a><p></p>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Setup</a><p></p>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Assesment</a>
                           </div>
                         </div>
                         <p></p>
@@ -354,7 +354,10 @@
                         <div class="dropdown-wrapper">
                           <button class="btn-primary" onclick="toggleContent(event, this)"><strong>View Final Product</strong></button>
                           <div class="dropdown-content hidden">
-                            <a href="#">Final Proposal</a>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Proposal</a><p></p>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Original Work</a><p></p>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Setup</a><p></p>
+                            <a href="https://docs.google.com/document/d/1Cs9NiGzPDOBZeMN1URca9lYmliMe77RoF5kzKmtDdFk/edit?usp=sharing">Assesment</a>
                           </div>
                         </div>
                       </div>
@@ -367,7 +370,6 @@
       }
     }
 
-    // Toggle function for dropdown content
     function toggleContent(event, link) {
       event.preventDefault();  // Prevents the page from scrolling to the top
       const dropdownContent = link.nextElementSibling;
@@ -378,8 +380,30 @@
       }
     }
 
+    // Dark mode toggle functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  
+  // Check localStorage and apply theme
+  if (localStorage.getItem('dark-mode') === 'true') {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.innerHTML = '☀️ Light Mode';
+  } else {
+    document.body.classList.remove('dark-mode');
+    darkModeToggle.innerHTML = '🌙 Dark Mode';
+  }
 
-    // Set event listeners for tab buttons
+  // Toggle dark mode on button click
+  darkModeToggle.addEventListener('click', () => {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dark-mode', isDarkMode);
+    darkModeToggle.innerHTML = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+  });
+});
+
+
+
+
     homeTab.addEventListener('click', () => setActiveTab(homeTab));
     blogsTab.addEventListener('click', () => setActiveTab(blogsTab));
     researchTab.addEventListener('click', () => setActiveTab(researchTab));
@@ -389,7 +413,6 @@
     mentorTab.addEventListener('click', () => setActiveTab(mentorTab));
     projectsTab.addEventListener('click', () => setActiveTab(projectsTab));
 
-    // Initialize with the home tab active
     setActiveTab(homeTab);
   </script>
 </body>

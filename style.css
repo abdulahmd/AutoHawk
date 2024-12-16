@@ -2,8 +2,93 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+/* General dark mode styles */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #e4e4e4;
+}
+
+/* Navbar styles for dark mode */
+body.dark-mode .nav-btn {
+  color: #e4e4e4;
+}
+
+body.dark-mode .nav-btn.active {
+  color: #ffffff;
+}
+
+/* Content area dark mode */
+body.dark-mode .dropdown-content {
+  background-color: #333333;
+  color: #e4e4e4;
+}
+
+/* Blog and project item styling */
+body.dark-mode .blog-item,
+body.dark-mode .research-item,
+body.dark-mode .projects-item {
+  background-color: #2a2a2a;
+  color: #e4e4e4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Button styles in dark mode */
+body.dark-mode .btn-primary {
+  background-color: #3b82f6;
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #2563eb;
+}
+
+body.dark-mode .btn-success {
+  background-color: #48bb78;
+}
+
+body.dark-mode .btn-success:hover {
+  background-color: #38a169;
+}
+
+/* Navbar background for dark mode */
+body.dark-mode .bg-gradient-to-r {
+  background: linear-gradient(to right, #333333, #444444);
+}
+
+/* Body and container adjustments for dark mode */
+body.dark-mode .container {
+  background-color: #333333;
+  color: #e4e4e4;
+}
+
+body.dark-mode .max-w-4xl {
+  background-color: #2a2a2a;
+}
+
+/* Dark mode toggle button adjustments */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 10;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #333333;
+  color: #e4e4e4;
+}
+
 
 .abd {
   border-radius: 200px;
@@ -78,7 +163,7 @@ body {
 
 .bg-gradient-to-r {
   background: linear-gradient(to right, #000000, #a0a0a0);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .text-white {
@@ -198,5 +283,23 @@ iframe {
   border: none;
   width: 700px;
   height: 700px;
+}
+
+.home-tab-background {
+  position: relative;
+  z-index: 1;
+}
+
+.home-tab-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.aeromotus.com/wp-content/uploads/2021/03/4-Rain-testing-IPX1-of-the-M300-RTK.gif') no-repeat center center / cover;
+  opacity: 0.2; /* Adjust opacity here */
+  z-index: -1;
+  border-radius: 10px;
 }
 

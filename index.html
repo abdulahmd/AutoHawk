@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abdullah Ahmed</title>
+  <link rel="icon" type="image/x-icon" href="saturn.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <style>
@@ -89,11 +90,11 @@
         case 'home-tab':
           contentDiv.innerHTML = `
             <div class="intro-section text-center home-tab-background">
-              <h2 class="text-4xl font-bold mb-4">Welcome to My Aerospace Portfolio</h2>
+              <h1 class="text-4xl font-bold mb-4">Welcome to My Aerospace Portfolio</h1>
               <img src="drone.png" alt="Cover Photo" class="abd">
-              <p class="mt-4 text-xl">"Dedicated to innovation in aerospace and drone engineering."</p>
-              <h3 class="text-2xl font-semibold mt-6">Abdullah Ahmed</h3>
-              <p class="text-lg">ISM 1 Student | Drone Engineering</p>
+              <p class="mt-4 text-xl">"Any sufficiently advanced technology is indistinguishable from magic." ~ Arthur C. Clarke</p>
+              <h1 class="text-2xl font-semibold mt-6">Abdullah Ahmed</h1>
+              <h3 class="text-lg">ISM 1 Student | Drone Control Engineering</h3>
             </div>
           `;
           break;
@@ -280,7 +281,7 @@
               <div class="bio-section text-center">
                 <h2 class="text-3xl font-semibold mb-4">Abdullah Ahmed</h2>
                 <p class="text-lg text-gray-700 mb-6">
-                  Passionate about aerospace engineering and drone technology, I am an ISM 1 student committed to advancing innovation in autonomous flight systems. With hands-on experience in control engineering and machine learning, I strive to contribute to the field of unmanned aerial vehicles and aerospace research.
+                  I'm a high school senior with an interest in control engineering. Throughout high school, I've been engaged in a multitude of other engineering based activities such as robotics, data science, and engineering research initiatives. Currently working on an AI based drone for ISM.
                 </p>
               </div>
 
@@ -288,7 +289,7 @@
               <div class="mission-statement text-center mb-6">
                 <h3 class="text-2xl font-semibold mb-2">Mission Statement</h3>
                 <p class="text-lg italic text-gray-600">
-                  "To leverage my skills in drone technology and aeronautics to create innovative solutions that advance the capabilities of autonomous flight systems and contribute to the betterment of society."
+                  <em>"I strive to develop adaptability and resilience to apply my research to real world issues. As these are already essential skills in the engineering field, I seek to create technological solutions that push both myself and humanity forward."</em>
                 </p>
               </div>
 
@@ -381,25 +382,25 @@
     }
 
     // Dark mode toggle functionality
-document.addEventListener('DOMContentLoaded', () => {
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  
-  // Check localStorage and apply theme
-  if (localStorage.getItem('dark-mode') === 'true') {
-    document.body.classList.add('dark-mode');
-    darkModeToggle.innerHTML = '☀️ Light Mode';
-  } else {
-    document.body.classList.remove('dark-mode');
-    darkModeToggle.innerHTML = '🌙 Dark Mode';
-  }
+    document.addEventListener('DOMContentLoaded', () => {
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      
+      // Check localStorage and apply theme
+      if (localStorage.getItem('dark-mode') === 'true') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '☀️ Light Mode';
+      } else {
+        document.body.classList.remove('dark-mode');
+        darkModeToggle.innerHTML = '🌙 Dark Mode';
+      }
 
-  // Toggle dark mode on button click
-  darkModeToggle.addEventListener('click', () => {
-    const isDarkMode = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('dark-mode', isDarkMode);
-    darkModeToggle.innerHTML = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
-  });
-});
+      // Toggle dark mode on button click
+      darkModeToggle.addEventListener('click', () => {
+        const isDarkMode = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('dark-mode', isDarkMode);
+        darkModeToggle.innerHTML = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+      });
+    });
 
 
 
